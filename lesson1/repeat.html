@@ -1,0 +1,47 @@
+﻿<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<TITLE></TITLE>
+<style>
+img{
+height:150px;
+width:250px;
+}
+</style>
+<script>
+var foto = new Array;
+for (var i=0;i<8;i++){
+foto[i] = new Image;
+foto[i].src = "../image/images00"+i+".jpg";
+} 
+n=0;
+function changeImg(){
+ if(n==0){
+ n=2;
+ i=4;
+ }
+ for (var i = 0; i<4;i++){
+ document.images[i].src = foto[i].src;
+ }
+}
+</script>
+</HEAD>
+<BODY>
+<table>
+<tr>
+<script>
+
+var j = 0;
+for(var i=0;i<4;i++){
+document.write("<td><img src='"+foto[i].src+"'></td>");
+j++;
+if(j==2){
+document.write("</tr><tr>");
+}
+}
+</script>
+</tr>
+</table>
+<input type="button" value="start" onClick="changeImg()">
+</BODY>
+</HTML>

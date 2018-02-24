@@ -1,0 +1,49 @@
+﻿<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+<TITLE></TITLE>
+<style>
+img{
+width:100px;
+}
+</style>
+<script>
+var testimg = new Array;
+for (var i = 0; i<12; i++){
+testimg[i] = new Image;
+if(i<10)
+testimg[i].src = "../image/images00"+i+".jpg";
+else
+testimg[i].src = "../image/images0"+i+".jpg";
+}
+</script>
+</HEAD>
+<BODY>
+<table>
+<script>
+	 var st = 0;
+	  for (var i=0; i<testimg.length ; i=i+3)  {
+	  document.write("<TR>");
+	  for (var j=i; (j<i+3 && j<testimg.length) ; j++){
+	  switch(st){
+	  case 0:
+	  document.write("<TD align='center'><marquee behavior='slide' height='80' direction='down'><IMG src='"+testimg[j].src+"'></marque></TD>");
+      break;
+	  case 1:
+	  document.write("<TD align='center'><marquee behavior='slide' height='80' direction='left'><IMG src='"+testimg[j].src+"'></marque></TD>");
+      break;
+	  case 2:
+	  document.write("<TD align='center'><marquee behavior='slide' height='80' direction='up'><IMG src='"+testimg[j].src+"'></marque></TD>");
+      break;
+	  case 3:
+	  document.write("<TD align='center'><marquee behavior='slide' height='80' direction='right'><IMG src='"+testimg[j].src+"'></marque></TD>");
+      break;
+	  }
+	  }
+	  st++;
+	  document.write("</TR>");
+	  }
+</script>
+</table>
+</BODY>
+</HTML>
